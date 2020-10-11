@@ -1,0 +1,22 @@
+{
+    "name": "compass",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "LCD1in8": "github:waveshare/wslcd1in8#2129a72397d5689c52007d92966a01d7f7cf3700"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "main.py"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
