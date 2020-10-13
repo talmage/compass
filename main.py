@@ -14,10 +14,16 @@ LCD1IN8.draw_circle(centerX,
     DRAW_FILL.DRAW_EMPTY,
     DOT_PIXEL.DOT_PIXEL_1)
 LCD1IN8.LCD_Display()
-# Check the compass heading every 1000ms.  Redraw the pointer if the heading changed.
-# 
 
 def on_in_background():
+    while True:
+        basic.show_number(heading)
+        basic.pause(1000)
+control.in_background(on_in_background)
+
+# Check the compass heading every 1000ms.  Redraw the pointer if the heading changed.
+
+def on_in_background2():
     global heading, newHeading
     heading = 0
     newHeading = 0
@@ -39,7 +45,6 @@ def on_in_background():
                 DOT_PIXEL.DOT_PIXEL_1,
                 LINE_STYLE.LINE_SOLID)
             LCD1IN8.LCD_Display()
-            basic.show_number(newHeading)
             heading = newHeading
         basic.pause(1000)
-control.in_background(on_in_background)
+control.in_background(on_in_background2)
